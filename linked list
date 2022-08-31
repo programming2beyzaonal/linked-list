@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node{
+	int number;
+	struct node *next;
+};
+typedef struct node node;
+node *head,*tail,*newNode;
+node* createList(){
+node *p,*q;
+int k=0;
+int data=0;
+	while(data!=-1){
+	if(k==0){
+	head=(node*)malloc(sizeof(node));
+	p=head;
+	k++;
+	printf("sayi giriniz: ");
+	scanf("%d",&p->number);
+	}
+	else{
+		printf("enter the number: ");
+		scanf("%d",&data);
+		p->next=(node*)malloc(sizeof(node));
+		p=p->next;
+
+    if(data%2==0){
+    	p=head;
+    	q=p;
+    	p=p->next;
+    	q->number=data;
+	}
+	else{
+		while(p->next!=NULL){
+			p=p->next;
+		}
+		p=p->next;
+		p->number=data;
+	}
+	p->next=NULL;
+}
+}
+return head;
+}
+int main(void){
+node *head;
+head=createList();
+}
